@@ -2,11 +2,38 @@
 //
 
 #include <iostream>
+#include "Personaje.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    char tecla;
+    Personaje* player = new Personaje(20,20,10,10,10);
+    std::cout << "=========================================\n";
+    std::cout << "Bienvenido al juego!\n";
+    std::cout << "aprieta una tecla para jugar\n";
+    std::cout << "=========================================\n";
+
+    //Update
+    while (true)
+    {
+        std::cin >> tecla;
+        if (tecla == 'w')
+            player->Saltar();
+        else if (tecla == 'f')
+            player->Disparar();
+        else
+        {
+            std::cout << "=======================\n";
+            std::cout << "Tecla invalida\n";
+            std::cout << "=======================\n";
+        }
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << std::endl;
+        std::cout << "nextframe\n";
+    }
 }
+
 
 // Ejecutar programa: Ctrl + F5 o menú Depurar > Iniciar sin depurar
 // Depurar programa: F5 o menú Depurar > Iniciar depuración
